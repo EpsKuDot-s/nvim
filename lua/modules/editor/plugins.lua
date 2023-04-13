@@ -19,9 +19,17 @@ package({
   dependencies = {
     'nvim-treesitter/nvim-treesitter-textobjects',
     'windwp/nvim-ts-autotag',
-    -- 'mrjones2014/nvim-ts-rainbow'
+    'HiPhish/nvim-ts-rainbow2'
   },
   config = conf.nvim_treesitter,
+})
+package({
+  'nvim-treesitter/nvim-treesitter-context',
+  dependencies = {
+    'nvim-treesitter/nvim-treesitter'
+  },
+  init = true,
+  config = conf.treesitter_context
 })
 package({
   'kevinhwang91/nvim-ufo',
