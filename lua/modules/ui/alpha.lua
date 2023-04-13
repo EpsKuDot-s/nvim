@@ -67,12 +67,12 @@ local options = {
     type = 'group',
     val = {
 
-      button(' SPC s l ', '󰁯 Restore session   ', ':RestoreSession<CR>'),
-      button(' SPC s w ', ' List session      ', ':Telescope session-lens search_session<CR>'),
-      button(' SPC f f ', '󰈞 Find file         ', ':Telescope find_files<CR>'),
-      button(' SPC f r ', '󰯓 Find recent       ', ':Telescope oldfiles<CR>'),
-      button(' SPC f w ', ' Find word         ', ':Telescope live_grep<CR>'),
-      button(' SPC f w ', '󰩈 Exit              ', ':q!<CR>'),
+      button(' SPC s l ', '󰦛  Restore session   ', ':RestoreSession<CR>'),
+      button(' SPC s w ', '  List session      ', ':Telescope session-lens search_session<CR>'),
+      button(' SPC f f ', '󰈞  Find file         ', ':Telescope find_files<CR>'),
+      button(' SPC f r ', '󰯓  Find recent       ', ':Telescope oldfiles<CR>'),
+      button(' SPC f w ', '  Find word         ', ':Telescope live_grep<CR>'),
+      button(' SPC f w ', '󰩈  Exit              ', ':q!<CR>'),
     },
     opts = {
       spacing = 1,

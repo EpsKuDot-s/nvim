@@ -1,4 +1,4 @@
--- require('keymap.remap')
+require('keymap.remap')
 -- local keymap = require('core.keymap')
 
 -- Terminal
@@ -6,6 +6,7 @@ vim.keymap.set('n', '<Leader>to', ':lua require("FTerm").toggle()<CR>', { desc =
 vim.keymap.set('n', '<A-i>', '<CMD>lua require("FTerm").toggle()<CR>')
 vim.keymap.set('t', '<A-i>', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
 vim.keymap.set('t', '<A-I>', '<C-\\><C-n><CMD>lua require("FTerm").exit()<CR>')
+vim.keymap.set('n', '<Leader>tr', ':lua require"runner".run()<CR>', { desc = "󱧕 Run runner.nvim" })
 
 -- Lazy
 vim.keymap.set('n', '<Leader>pp', ':Lazy profile<CR>', { desc = " Lazy profile" })
@@ -20,6 +21,7 @@ vim.keymap.set('n', '<Leader>gl', ':LazyGit<CR>', { desc = "󱧕 Lazy git" })
 vim.keymap.set('n', '<Leader>li', ':LspInfo<CR>', { desc = "󱧕 Git commits" })
 vim.keymap.set('n', '<Leader>ll', ':LspLog<CR>', { desc = "󱧕 Git commits" })
 vim.keymap.set('n', '<Leader>lr', ':LspRestart<CR>', { desc = "󱧕 Git commits" })
+vim.keymap.set('n', '<Leader>lf', '<CMD>lua vim.lsp.buf.format()<CR>', { desc = "󱧕 Format code" })
 
 -- Lsp Actions
 vim.keymap.set('n', 'ga', ':CodeActionMenu<CR>', { desc = "󱧕 Git commits" })

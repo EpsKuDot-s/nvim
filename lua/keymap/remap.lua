@@ -1,60 +1,39 @@
-local keymap = require('core.keymap')
-local nmap, imap, cmap = keymap.nmap, keymap.imap, keymap.cmap
-local silent, noremap = keymap.silent, keymap.noremap
-local opts = keymap.new_opts
-local cmd = keymap.cmd
 local wk = require("which-key")
 
--- noremal remap
-nmap({
-  -- close buffer
-  { '<C-x>k', cmd('bdelete'),            opts(noremap, silent) },
-  -- save
-  { '<C-s>',  cmd('write'),              opts(noremap) },
-  -- remove trailing white space
-  -- { '<Leader>t', cmd('TrimTrailingWhitespace'), opts(noremap) },
-  -- window jump
-  { '<C-k>',  ':bn<CR>',                 opts(noremap) },
-  { '<C-j>',  ':bp<CR>',                 opts(noremap) },
 
-  { '<A-h>',  '<C-w>h' },
-  { '<A-l>',  '<C-w>l' },
-  { '<A-j>',  '<C-w>j' },
-  { '<A-k>',  '<C-w>k' },
-  -- resize window
-  { '<A-[>',  cmd('vertical resize -5'), opts(noremap, silent) },
-  { '<A-]>',  cmd('vertical resize +5'), opts(noremap, silent) },
-})
+vim.keymap.set('n', '<C-k>', ':bn<CR>', { desc = " Terminal toggle" })
+vim.keymap.set('n', '<C-j>', ':bp<CR>', { desc = " Terminal toggle" })
+
+vim.keymap.set('n', '<A-h>', '<C-w>h', { desc = " Terminal toggle" })
+vim.keymap.set('n', '<A-l>', '<C-w>l', { desc = " Terminal toggle" })
+vim.keymap.set('n', '<A-j>', '<C-w>j', { desc = " Terminal toggle" })
+vim.keymap.set('n', '<A-k>', '<C-w>k', { desc = " Terminal toggle" })
 
 -- insertmode remap
-imap({
-  { '<C-h>', '<left>',      opts(noremap) },
-  { '<C-l>', '<right>',     opts(noremap) },
-  { '<C-k>', '<up>',        opts(noremap) },
-  { '<C-j>', '<down>',      opts(noremap) },
-  { '<C-s>', '<ESC>:w<CR>', opts(noremap) },
-})
+-- imap({
+--   { '<C-h>', '<left>',      opts(noremap) },
+--   { '<C-l>', '<right>',     opts(noremap) },
+--   { '<C-k>', '<up>',        opts(noremap) },
+--   { '<C-j>', '<down>',      opts(noremap) },
+--   { '<C-s>', '<ESC>:w<CR>', opts(noremap) },
+-- }) TODO: make it
 
 -- commandline remap
-cmap({
-  { '<C-b>', '<Left>',  opts(noremap) },
-  { '<C-f>', '<Right>', opts(noremap) },
-  { '<C-a>', '<Home>',  opts(noremap) },
-  { '<C-e>', '<End>',   opts(noremap) },
-  { '<C-d>', '<Del>',   opts(noremap) },
-  { '<C-h>', '<BS>',    opts(noremap) },
-})
+-- cmap({
+--   { '<C-b>', '<Left>',  opts(noremap) },
+--   { '<C-f>', '<Right>', opts(noremap) },
+--   { '<C-a>', '<Home>',  opts(noremap) },
+--   { '<C-e>', '<End>',   opts(noremap) },
+--   { '<C-d>', '<Del>',   opts(noremap) },
+--   { '<C-h>', '<BS>',    opts(noremap) },
+-- })
+
+vim.keymap.set('n', '<Leader>de', ':lua require "dap".continue()<CR>', { desc = " Debug run" })
+vim.keymap.set('n', '<Leader>dr', ':lua require "dap".toggle_breakpoint()<CR>', { desc = " Debug continue" })
+vim.keymap.set('n', '<Leader>dc', ':lua require "dap".update_project_config()<CR>', { desc = " Debug update" })
+vim.keymap.set('n', '<Leader>dh', ':JdtHotReplace<CR>', { desc = " Debug Hot Replace" })
 
 wk.register({
-  d = {
-    name = "Debug", -- optional group name
-    e = { function()
-      require 'dap'.continue()
-    end, "Debug run" },
-    c = { ":lua require('jdtls').update_project_config()<CR>", "Debug continue" }, -- create a binding with label
-    h = { ":JdtHotReplace<CR>" },
-    r = { ":lua require'dap'.toggle_breakpoint()<CR>", "Toggle breakpoinst" },     -- additional options for creating the keymap
-  },
   c = {
     r = { ":w<CR>:CompetiTestRun<CR>", " Run test" },
     d = { ":CompetiTestDelete<CR>", "﯊ Delete test" },
@@ -69,3 +48,4 @@ wk.register({
     end, "Close window" }
   }
 }, { prefix = "<Space>" })
+-- TODO: convert it

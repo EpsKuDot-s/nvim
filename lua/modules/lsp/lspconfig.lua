@@ -96,12 +96,12 @@ lspconfig.html.setup {
   capabilities = M.capabilities,
 }
 
-vim.cmd [[
-  autocmd BufWritePre *.html lua vim.lsp.buf.format({ async = false })
-]]
-vim.cmd [[
-  autocmd BufWritePre *.ts lua vim.lsp.buf.format({ async = false })
-]]
-vim.cmd [[
-  autocmd BufWritePre *.css lua vim.lsp.buf.format({ async = false })
-]]
+-- vim.cmd [[
+--   autocmd BufWritePre *.html lua vim.lsp.buf.format({ async = false })
+-- ]]
+-- vim.cmd [[
+--   autocmd BufWritePre *.ts lua vim.lsp.buf.format({ async = false })
+-- ]]
+-- vim.cmd [[
+--   autocmd BufWritePre *.css lua vim.lsp.buf.format({ async = false })
+-- ]]
