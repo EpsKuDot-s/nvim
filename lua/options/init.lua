@@ -3,8 +3,9 @@ local cache_dir = os.getenv('HOME') .. '/.cache/nvim/'
 
 local g, api = vim.g, vim.api
 g.mapleader = ' '
-vim.cmd [[
-let g:clipboard = {
+if (vim.loop.os_uname().sysname == 'windows') then
+  vim.cmd [[
+  let g:clipboard = {
             \   'name': 'WslClipboard',
             \   'copy': {
             \      '+': 'clip.exe',
@@ -17,6 +18,7 @@ let g:clipboard = {
             \   'cache_enabled': 0,
             \ }
 ]]
+end
 
 api.nvim_set_keymap('n', ' ', '', { noremap = true })
 api.nvim_set_keymap('x', ' ', '', { noremap = true })
@@ -31,6 +33,7 @@ if vim.g.neovide then
   vim.g.neovide_floating_blur_amount_x = 3.0
   vim.g.neovide_floating_blur_amount_y = 3.0
 end
+opt.laststatus = 3
 opt.mouse = 'nv'
 opt.hidden = true
 opt.fileformats = 'unix,mac,dos'

@@ -82,6 +82,6 @@ package({ 'L3MON4D3/LuaSnip', event = 'InsertCharPre', config = conf.lua_snip })
 
 package({ 'windwp/nvim-autopairs', event = 'InsertEnter', config = conf.auto_pairs })
 
-package({ 'mfussenegger/nvim-jdtls', ft = 'java' })
+package({ 'mfussenegger/nvim-jdtls', ft = 'java', config = conf.jdtls })
 
 package({ 'dnlhc/glance.nvim', after = 'nvim-lspconfig', event = 'BufRead', config = conf.glance })
