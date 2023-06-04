@@ -1,8 +1,8 @@
 require("kimbox").setup({
-  style = "ocean", -- choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
+  style = "used_oil", -- choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
   langs08 = true,
   popup = {
-    background = false, -- use background color for pmenu
+    background = true, -- use background color for pmenu
   },
   diagnostics = {
     background = true, -- use background color for virtual text
@@ -12,9 +12,9 @@ require("kimbox").setup({
   allow_underline = true,
   allow_undercurl = true,
   allow_reverse = false,
-  transparent = false,  -- don't set background
-  term_colors = true,   -- if true enable the terminal
-  ending_tildes = true, -- show the end-of-buffer tildes
+  transparent = false,   -- don't set background
+  term_colors = true,    -- if true enable the terminal
+  ending_tildes = false, -- show the end-of-buffer tildes
   colors = {
 
   }, -- Override default colors
@@ -98,13 +98,13 @@ require("kimbox").setup({
       bg = "$bg2",
       fg = "$fg4"
     },
-    NormalFloat              = {
-      bg = "$bg2",
-      fg = "$fg4"
-    },
-    CarbonDir                = {
-      bg = "$bg2",
-      fg = "$fg4"
+    -- NormalFloat              = {
+    --   bg = "$bg2",
+    --   fg = "$fg4"
+    -- },
+    TreesitterContext        = {
+      bg = "$bg3",
+      fg = "$fg3"
     }
   },
   disabled = {

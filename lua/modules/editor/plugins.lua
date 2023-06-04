@@ -8,8 +8,14 @@ package({
   dependencies = {
     { 'nvim-lua/popup.nvim' },
     { 'nvim-lua/plenary.nvim' },
-    { 'rmagatti/session-lens' }
   },
+})
+
+package({
+  'rmagatti/session-lens',
+  dependencies = { 'rmagatti/auto-session', 'nvim-telescope/telescope.nvim' },
+  config = conf.session_lens,
+  lazy = false
 })
 
 package({

@@ -61,6 +61,9 @@ function config.telescope()
   end
   require('telescope').setup(tconfig)
 
+end
+
+function config.session_lens()
   require('session-lens').setup {
 
     layout_strategy = "vertical",

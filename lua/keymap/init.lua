@@ -31,8 +31,8 @@ vim.keymap.set('n', 'gr', ':Glance implementations<CR>', { desc = "󱧕 Git comm
 vim.keymap.set('n', 'gt', ':Glance type_definitions<CR>', { desc = "󱧕 Git commits" })
 
 -- Session and File
-vim.keymap.set('n', '<Leader>ss', ':SaveSession<CR>', { desc = "󱧕 Git commits" })
-vim.keymap.set('n', '<Leader>sr', ':RestoreSession<CR>', { desc = "󱧕 Git commits" })
+vim.keymap.set('n', '<Leader>ss', ':SessionSave<CR>', { desc = "󱧕 Git commits" })
+vim.keymap.set('n', '<Leader>sr', ':SessionRestore<CR>', { desc = "󱧕 Git commits" })
 vim.keymap.set('n', '<Leader>sa', ':wall<CR>', { desc = "󱧕 Git commits" })
 vim.keymap.set('n', '<C-s>', ':w<CR>', { desc = "󱧕 Git commits" })
 

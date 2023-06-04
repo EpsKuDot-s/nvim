@@ -67,7 +67,7 @@ local options = {
     type = 'group',
     val = {
 
-      button(' SPC s l ', '󰦛  Restore session   ', ':RestoreSession<CR>'),
+      button(' SPC s l ', '󰦛  Restore session   ', ':SessionRestore<CR>'),
       button(' SPC s w ', '  List session      ', ':Telescope session-lens search_session<CR>'),
       button(' SPC f f ', '󰈞  Find file         ', ':Telescope find_files<CR>'),
       button(' SPC f r ', '󰯓  Find recent       ', ':Telescope oldfiles<CR>'),

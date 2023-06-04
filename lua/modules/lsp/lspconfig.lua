@@ -77,9 +77,6 @@ lspconfig.lua_ls.setup({
     },
   },
 })
-vim.cmd [[
-    autocmd BufWritePre *.lua lua vim.lsp.buf.format({ async = false })
-]]
 
 lspconfig.clangd.setup({
   on_attach = M.on_attach,
@@ -96,6 +93,9 @@ lspconfig.html.setup {
   capabilities = M.capabilities,
 }
 
+-- vim.cmd [[
+--     autocmd BufWritePre *.lua lua vim.lsp.buf.format({ async = false })
+-- ]]
 -- vim.cmd [[
 --   autocmd BufWritePre *.html lua vim.lsp.buf.format({ async = false })
 -- ]]

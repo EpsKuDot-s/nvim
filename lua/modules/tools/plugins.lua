@@ -18,11 +18,7 @@ package({
   config = conf.auto_session,
   lazy = false
 })
--- package({
---   'rmagatti/session-lens',
---   dependencies = { 'rmagatti/auto-session', '' },
---   lazy = false
--- })
+
 package({
   'numToStr/Comment.nvim',
   config = conf.comment,
@@ -57,9 +53,21 @@ package({
   ft = 'cpp'
 })
 package({
+  dir = '~/Documents/GitHub/nvim-spectre',
+  config = conf.spectre,
+  lazy = false
+})
+package({
   'jghauser/papis.nvim',
   config = conf.papis,
-  -- lazy = false
+  lazy = false,
+  -- ft = { "yaml"},
+  dependencies = {
+    "kkharji/sqlite.lua",
+    "nvim-lua/plenary.nvim",
+    "MunifTanjim/nui.nvim",
+    "nvim-treesitter/nvim-treesitter",
+  },
   -- TODO: Reconfigure it
 })
 package({
