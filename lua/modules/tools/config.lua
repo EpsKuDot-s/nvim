@@ -205,6 +205,19 @@ function config.jabs()
       border = 'single',        -- none, single, double, rounded, solid, shadow, (or an array or chars). Default double
     },
 
+    symbols = {
+        current = "󰄾 ",
+        split = " ",
+        alternate = "A", -- default 
+        hidden = "H", -- default ﬘
+        locked = "L", -- default 
+        ro = "R", -- default 
+        edited = "E", -- default 
+        terminal = "T", -- default 
+        default_file = "D", -- Filetype icon if not present in nvim-web-devicons. Default 
+        terminal_symbol = ">_" -- Filetype icon for a terminal split. Default 
+    },
+
     -- Whether to use nvim-web-devicons next to filenames
     use_devicons = true -- true or false. Default true
   }
@@ -415,6 +428,12 @@ function config.spectre()
     is_open_target_win = true, --open file on opener window
     is_insert_mode     = false -- start open panel on is_insert_mode
   })
+end
+
+function config.glow()
+  require('glow').setup({
+  -- your override config
+})
 end
 
 return config

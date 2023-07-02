@@ -11,7 +11,7 @@ local lsp_ft = {
   'scss'
 }
 local dap_ft = {
-  'java'
+  'java' 
 }
 
 package({
@@ -76,8 +76,6 @@ package({
   cmd = 'TodoQuickFix'
 })
 
-package({ url = 'https://git.sr.ht/~whynothugo/lsp_lines.nvim', config = conf.lsp_lines, ft = lsp_ft })
-
 package({ 'L3MON4D3/LuaSnip', event = 'InsertCharPre', config = conf.lua_snip })
 
 package({ 'windwp/nvim-autopairs', event = 'InsertEnter', config = conf.auto_pairs })
@@ -85,3 +83,18 @@ package({ 'windwp/nvim-autopairs', event = 'InsertEnter', config = conf.auto_pai
 package({ 'mfussenegger/nvim-jdtls', ft = 'java', config = conf.jdtls })
 
 package({ 'dnlhc/glance.nvim', after = 'nvim-lspconfig', event = 'BufRead', config = conf.glance })
+
+package({
+  'VidocqH/lsp-lens.nvim',
+  config = function()
+    require 'lsp-lens'.setup({
+      include_declaration = true, -- Reference include declaration
+      sections = {
+        definition = true,
+        references = true,
+        implementation = true,
+      },
+    })
+  end,
+  lazy = false
+})

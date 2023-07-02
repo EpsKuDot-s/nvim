@@ -19,44 +19,32 @@ end
 function config.gitsigns()
   require('gitsigns').setup({
     signs = {
-      add          = { hl = 'GitGutterAdd', text = '🮙' },
-      change       = { hl = 'GitGutterChange', text = '🮙' },
+      add          = { hl = 'GitGutterAdd', text = '' }, -- 🮙
+      change       = { hl = 'GitGutterChange', text = '~' },
       delete       = { hl = 'GitGutterDelete', text = '' },
       topdelete    = { hl = 'GitGutterDeleteChange', text = '▔' },
-      changedelete = { hl = 'GitGutterChange', text = '🮙' },
-      untracked    = { text = '🮙' }
-    },
-    keymaps = {
-      -- Default keymap options
-      noremap = true,
-      buffer = true,
-      ['n ]g'] = { expr = true, "&diff ? ']g' : '<cmd>lua require\"gitsigns\".next_hunk()<CR>'" },
-      ['n [g'] = { expr = true, "&diff ? '[g' : '<cmd>lua require\"gitsigns\".prev_hunk()<CR>'" },
-      ['n <leader>hs'] = '<cmd>lua require"gitsigns".stage_hunk()<CR>',
-      ['n <leader>hu'] = '<cmd>lua require"gitsigns".undo_stage_hunk()<CR>',
-      ['n <leader>hr'] = '<cmd>lua require"gitsigns".reset_hunk()<CR>',
-      ['n <leader>hp'] = '<cmd>lua require"gitsigns".preview_hunk()<CR>',
-      ['n <leader>hb'] = '<cmd>lua require"gitsigns".blame_line()<CR>',
-      -- Text objects
-      ['o ih'] = ':<C-U>lua require"gitsigns".text_object()<CR>',
-      ['x ih'] = ':<C-U>lua require"gitsigns".text_object()<CR>',
-    },
+      changedelete = { hl = 'GitGutterChange', text = '~' },
+      untracked    = { text = '' }
+    }
+
   })
 end
 
 function config.indent_blankline()
-  -- vim.opt.listchars:append "space:⋅"
+  -- vim.opt.listchars:append "tab:▶"
   vim.opt.listchars:append "eol:󱞣"
+  vim.opt.listchars:append "space:⋅"
   vim.opt.list = true
   require('indent_blankline').setup({
-    char = '│',
-    show_end_of_line = true,
-    space_char_blankline = " ",
+    char = '',
+    char_blankline = '┆',
+    show_end_of_line = false,
     use_treesitter_scope = true,
     show_first_indent_level = false,
-    show_current_context = true,
-    show_current_context_start = false,
-    show_current_context_start_on_current_line = false,
+    space_char_blankline = " ",
+    -- show_current_context = true,
+    -- show_current_context_start = true,
+    -- show_current_context_start_on_current_line = false,
     filetype_exclude = {
       'dashboard',
       'DogicPrompt',
@@ -133,6 +121,11 @@ function config.neogit()
   local neogit = require('neogit')
 
   neogit.setup {}
+end
+
+function config.scope()
+  -- init.lua
+  require("scope").setup({})
 end
 
 return config

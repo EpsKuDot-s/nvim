@@ -48,28 +48,29 @@ package({
   }
 })
 package({
+
   'xeluxee/competitest.nvim',
   config = conf.competitest,
   ft = 'cpp'
 })
 package({
-  dir = '~/Documents/GitHub/nvim-spectre',
+  'Mr-LLLLL/nvim-spectre',
   config = conf.spectre,
-  lazy = false
+  init = true
 })
-package({
-  'jghauser/papis.nvim',
-  config = conf.papis,
-  lazy = false,
-  -- ft = { "yaml"},
-  dependencies = {
-    "kkharji/sqlite.lua",
-    "nvim-lua/plenary.nvim",
-    "MunifTanjim/nui.nvim",
-    "nvim-treesitter/nvim-treesitter",
-  },
-  -- TODO: Reconfigure it
-})
+-- package({
+--   'jghauser/papis.nvim',
+--   config = conf.papis,
+--   lazy = false,
+--   -- ft = { "yaml"},
+--   dependencies = {
+--     "kkharji/sqlite.lua",
+--     "nvim-lua/plenary.nvim",
+--     "MunifTanjim/nui.nvim",
+--     "nvim-treesitter/nvim-treesitter",
+--   },
+--   -- TODO: Reconfigure it
+-- })
 package({
   'matbme/JABS.nvim',
   config = conf.jabs,
@@ -80,8 +81,13 @@ package({
   config = conf.fterm,
   lazy = false
 })
--- package({
---   'lewis6991/satellite.nvim',
---   config = conf.satellite,
---   init = true
--- })
+package({
+  'ellisonleao/glow.nvim',
+  config = conf.glow,
+  cmd = 'Glow'
+})
+package({
+  'lewis6991/satellite.nvim',
+  config = conf.satellite,
+  init = true
+})

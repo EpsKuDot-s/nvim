@@ -105,15 +105,27 @@ require("kimbox").setup({
     TreesitterContext        = {
       bg = "$bg3",
       fg = "$fg3"
+    },
+    CodeBlock                = {
+      -- fg = "$fg3",
+      bg = "#38260e"
+    },
+    IndentBlanklineIndent1   = {
+    },
+    IndentBlanklineIndent2   = {
+      bg = "$bg3"
+    },
+    ColorColumn              = {
+    },
+    TabLine                  = {
+      bg = "$bg2",
+    },
+    TabLineSel               = {
+      bg = "$fg3",
+      fg = "$bg3"
     }
   },
-  disabled = {
-    langs = {},
-    plugins = {},
-    langs08 = {}    -- Capture groups only present on nightly release (see below)
-  },
-  run_before = nil, -- Run a function before the colorscheme is loaded
-  run_after = nil   -- Run a function after the colorscheme is loaded
 })
-require("kimbox").load()
+-- require("kimbox").load()
+vim.cmd("colorscheme kimbox")
 vim.g.terminal_color_7 = "#D9AE80"
