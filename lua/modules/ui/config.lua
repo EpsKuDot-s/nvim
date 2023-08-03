@@ -98,6 +98,7 @@ end
 function config.carbon()
   require('carbon').setup({
     always_reveal = true,
+    auto_reveal = true,
     auto_open = false,
     indicators = { collapse = '▾', expand = '▸' },
     actions = {

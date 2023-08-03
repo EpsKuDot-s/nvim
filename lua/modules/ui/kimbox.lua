@@ -1,5 +1,12 @@
 require("kimbox").setup({
   style = "used_oil", -- choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
+
+    ---    burnt_coffee : #231A0C   -- legacy: "medium"
+    ---    cannon       : #221A02   -- legacy: "ocean"
+    ---    used_oil     : #221A0F   -- legacy: "vscode"
+    ---    deep         : #0F111B
+    ---    zinnwaldite  : #291804   -- legacy: "darker"
+    ---    eerie        : #1C0B28
   langs08 = true,
   popup = {
     background = true, -- use background color for pmenu

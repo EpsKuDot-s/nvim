@@ -17,26 +17,26 @@ local dap_ft = {
 package({
   'williamboman/mason.nvim',
   config = conf.mason,
-  ft = lsp_ft
+  lazy = false
 })
 
 
 package({
   'williamboman/mason-lspconfig.nvim',
   config = conf.mason_lspconfig,
-  ft = lsp_ft
+  lazy = false
 })
 
 package({
   'neovim/nvim-lspconfig',
   config = conf.nvim_lsp,
-  ft = lsp_ft
+  lazy = false
 })
 
 package({
   'jose-elias-alvarez/typescript.nvim',
   config = conf.typescript,
-  ft = 'typescript'
+  lazy = false
 })
 
 package({ 'weilbith/nvim-code-action-menu', config = conf.code_action, cmd = 'CodeActionMenu' })

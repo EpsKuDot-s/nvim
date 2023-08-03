@@ -48,16 +48,14 @@ package({
   }
 })
 package({
-
   'xeluxee/competitest.nvim',
   config = conf.competitest,
   ft = 'cpp'
 })
 package({
-  'Mr-LLLLL/nvim-spectre',
+  'nvim-pack/nvim-spectre',
   config = conf.spectre,
-  init = true
-})
+  init = true})
 -- package({
 --   'jghauser/papis.nvim',
 --   config = conf.papis,
@@ -90,4 +88,31 @@ package({
   'lewis6991/satellite.nvim',
   config = conf.satellite,
   init = true
+})
+
+package({
+  dir = '~/Documents/Neovim/kui-demo.nvim',
+  dependencies = {
+    { 'romgrk/kui.nvim' },
+  },
+  lazy = false
+})
+
+package({
+  'romgrk/kirby.nvim',
+  dependencies = {
+    { 'romgrk/fzy-lua-native',      build = 'make install' },
+    { 'romgrk/kui.nvim' },
+    { 'nvim-tree/nvim-web-devicons' },
+    { 'nvim-lua/plenary.nvim' },
+  },
+  config = conf.kirby,
+  lazy = false
+})
+
+package({
+  'Wansmer/langmapper.nvim',
+  lazy = false,
+  priority = 1,
+  config = conf.langmapper,
 })

@@ -206,16 +206,16 @@ function config.jabs()
     },
 
     symbols = {
-        current = "󰄾 ",
-        split = " ",
-        alternate = "A", -- default 
-        hidden = "H", -- default ﬘
-        locked = "L", -- default 
-        ro = "R", -- default 
-        edited = "E", -- default 
-        terminal = "T", -- default 
-        default_file = "D", -- Filetype icon if not present in nvim-web-devicons. Default 
-        terminal_symbol = ">_" -- Filetype icon for a terminal split. Default 
+      current = "󰄾 ",
+      split = " ",
+      alternate = "A",       -- default 
+      hidden = "H",          -- default ﬘
+      locked = "L",          -- default 
+      ro = "R",              -- default 
+      edited = "E",          -- default 
+      terminal = "T",        -- default 
+      default_file = "D",    -- Filetype icon if not present in nvim-web-devicons. Default 
+      terminal_symbol = ">_" -- Filetype icon for a terminal split. Default 
     },
 
     -- Whether to use nvim-web-devicons next to filenames
@@ -263,8 +263,10 @@ end
 function config.spectre()
   require('spectre').setup({
     color_devicons     = true,
+
+
     open_cmd           = 'vnew',
-    live_update        = false, -- auto execute search again when you write to any file in vim
+    live_update        = true, -- auto execute search again when you write to any file in vim
     line_sep_start     = '┌-----------------------------------------',
     result_padding     = '¦  ',
     line_sep           = '└-----------------------------------------',
@@ -432,8 +434,53 @@ end
 
 function config.glow()
   require('glow').setup({
-  -- your override config
-})
+    -- your override config
+  })
+end
+
+function config.kirby()
+  local kirby = require('kirby')
+
+  kirby.register({
+    id = 'git-branch',
+    name = 'Git checkout',
+    values = function() return vim.fn['fugitive#CompleteObject']('', ' ', '') end,
+    onAccept = 'Git checkout',
+  })
+
+  kirby.register({
+    id = 'session',
+    name = 'Open session',
+    values = function() return vim.fn['xolox#session#complete_names']('', 'OpenSession ', 0) end,
+    onAccept = 'OpenSession',
+  })
+
+  kirby.register({
+    id = 'note',
+    name = 'Open note',
+    values = function() return vim.fn['xolox#notes#cmd_complete']('', 'Note ', 0) end,
+    onAccept = 'Note',
+  })
+end
+
+function config.langmapper()
+  local function escape(str)
+    -- You need to escape these characters to work correctly
+    local escape_chars = [[;,."|\]]
+    return vim.fn.escape(str, escape_chars)
+  end
+
+  -- Recommended to use lua template string
+  local en = [[`qwertyuiop[]asdfghjkl;'zxcvbnm]]
+  local ru = [[ёйцукенгшщзхъфывапролджэячсмить]]
+  local en_shift = [[~QWERTYUIOP{}ASDFGHJKL:"ZXCVBNM<>]]
+  local ru_shift = [[ËЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ]]
+  vim.opt.langmap = vim.fn.join({
+    -- | `to` should be first     | `from` should be second
+    escape(ru_shift) .. ';' .. escape(en_shift),
+    escape(ru) .. ';' .. escape(en),
+  }, ',')
+  require('langmapper').automapping({ global = true, buffer = true })
 end
 
 return config

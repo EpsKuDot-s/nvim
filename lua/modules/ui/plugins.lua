@@ -11,15 +11,15 @@ local enable_indent_filetype = {
   'typescript'
 }
 
-package({ 'lmburns/kimbox', config = conf.kimbox, lazy = false })
+package({ 'lmburns/kimbox', config = conf.kimbox, lazy = false,priority = 2 })
 
 -- package({ 'kvrohit/mellow.nvim', config = conf.mellow, lazy = false })
 
-package({ 'goolord/alpha-nvim', config = conf.alpha, lazy = false })
+package({ 'goolord/alpha-nvim', config = conf.alpha, lazy = false,priority = 3 })
 
-package({
-  'kyazdani42/nvim-web-devicons'
-})
+-- package({
+--   'kyazdani42/nvim-web-devicons'
+-- })
 package({
   'windwp/windline.nvim',
   config = conf.windline,
