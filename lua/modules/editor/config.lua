@@ -90,6 +90,10 @@ function config.session_lens()
   require("telescope").load_extension("session-lens")
 end
 
+local function ts_disable(_, bufnr)
+    return vim.api.nvim_buf_line_count(bufnr) > 5000
+end
+
 function config.nvim_treesitter()
   vim.api.nvim_command('set foldmethod=expr')
   vim.api.nvim_command('set foldexpr=nvim_treesitter#foldexpr()')
@@ -101,7 +105,9 @@ function config.nvim_treesitter()
     ensure_installed = 'all',
     highlight = {
       enable = true,
-      disable = { "html" },
+      disable = function(lang, bufnr)
+            return lang == "cmake" or ts_disable(lang, bufnr)
+        end,
     },
     textobjects = {
       select = {
