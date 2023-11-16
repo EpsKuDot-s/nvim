@@ -62,7 +62,7 @@ basic.lsp_diagnos = {
       return {
         { lsp_comps.lsp_error({ format = '  %s' }),   'red' },
         { lsp_comps.lsp_warning({ format = '  %s' }), 'yellow' },
-        { lsp_comps.lsp_hint({ format = '  %s' }),    'blue' },
+        { lsp_comps.lsp_hint({ format = '  %s' }),    'blue' },
       }
     end
     return ''
@@ -112,7 +112,7 @@ basic.git = {
         { ' ',                                            '' },
         { git_comps.diff_added({ format = ' %s' }),    'green' },
         { git_comps.diff_removed({ format = '  %s' }), 'red' },
-        { git_comps.diff_changed({ format = ' 柳%s' }),  'blue' },
+        { git_comps.diff_changed({ format = '  %s' }),  'blue' },
       }
     end
     return ''
@@ -126,7 +126,7 @@ basic.logo = {
   text = function()
     return {
       { sep.left_rounded, 'sep_before' },
-      { ' ',           'default' },
+      { '󰀘 ',           'default' },
     }
   end,
 }
@@ -142,7 +142,7 @@ local default = {
     basic.lsp_diagnos,
     basic.git,
     basic.divider,
-    { git_comps.git_branch({ icon = '  ' }), { 'green', 'black' }, 90 },
+    { git_comps.git_branch({ icon = '  ' }), { 'green', 'black' }, 90 },
     { ' ',                                      hl_list.Black },
     basic.vi_mode,
     basic.right,

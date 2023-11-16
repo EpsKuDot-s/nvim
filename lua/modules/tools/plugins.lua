@@ -84,31 +84,31 @@ package({
   config = conf.glow,
   cmd = 'Glow'
 })
-package({
-  'lewis6991/satellite.nvim',
-  config = conf.satellite,
-  init = true
-})
+--package({
+--  'lewis6991/satellite.nvim',
+--  config = conf.satellite,
+--  init = true
+--})
 
-package({
-  dir = '~/Documents/Neovim/kui-demo.nvim',
-  dependencies = {
-    { 'romgrk/kui.nvim' },
-  },
-  lazy = false
-})
+-- package({
+--  dir = '~/Documents/Neovim/kui-demo.nvim',
+--  dependencies = {
+--    { 'romgrk/kui.nvim' },
+--  },
+--  lazy = false
+-- })
 
-package({
-  'romgrk/kirby.nvim',
-  dependencies = {
-    { 'romgrk/fzy-lua-native',      build = 'make install' },
-    { 'romgrk/kui.nvim' },
-    { 'nvim-tree/nvim-web-devicons' },
-    { 'nvim-lua/plenary.nvim' },
-  },
-  config = conf.kirby,
-  lazy = false
-})
+-- package({
+--  'romgrk/kirby.nvim',
+--  dependencies = {
+--    { 'romgrk/fzy-lua-native',      build = 'make install' },
+--    { 'romgrk/kui.nvim' },
+--    { 'nvim-tree/nvim-web-devicons' },
+--    { 'nvim-lua/plenary.nvim' },
+--  },
+--   config = conf.kirby,
+--   lazy = false
+-- })
 
 package({
   'Wansmer/langmapper.nvim',

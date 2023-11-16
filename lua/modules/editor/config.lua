@@ -91,7 +91,7 @@ function config.session_lens()
 end
 
 local function ts_disable(_, bufnr)
-    return vim.api.nvim_buf_line_count(bufnr) > 5000
+    return vim.api.nvim_buf_line_count(bufnr) > 30000
 end
 
 function config.nvim_treesitter()
@@ -124,7 +124,7 @@ function config.nvim_treesitter()
       enable = true,
       -- disable = { "jsx", "cpp" }, list of languages you want to disable the plugin for
       extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
-      max_file_lines = 10000,
+      max_file_lines = 5000,
     }
   })
 end

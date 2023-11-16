@@ -60,13 +60,13 @@ function config.dap_ui()
   -- vim.highlight.create('DapStopped', { ctermbg = 0, guifg = '#98c379', guibg = '#31353f' }, false)
 
   vim.fn.sign_define('DapBreakpoint', {
-    text = '',
+    text = '󰝥',
     texthl = 'DapBreakpoint',
     linehl = 'DapBreakpoint',
     numhl = 'DapBreakpoint'
   })
   vim.fn.sign_define('DapBreakpointCondition',
-    { text = 'ﳁ', texthl = 'DapBreakpoint', linehl = 'DapBreakpoint', numhl = 'DapBreakpoint' })
+    { text = '󰟃', texthl = 'DapBreakpoint', linehl = 'DapBreakpoint', numhl = 'DapBreakpoint' })
   vim.fn.sign_define('DapBreakpointRejected',
     { text = '', texthl = 'DapBreakpoint', linehl = 'DapBreakpoint', numhl = 'DapBreakpoint' })
   vim.fn.sign_define('DapLogPoint', { text = '', texthl = 'DapLogPoint', linehl = 'DapLogPoint', numhl = 'DapLogPoint' })
@@ -110,9 +110,9 @@ function config.dap_ui()
       icons = {
         pause = "",
         play = "",
-        step_into = "",
-        step_over = "",
-        step_out = "",
+        step_into = "",
+        step_over = "",
+        step_out = "",
         step_back = "",
         run_last = "↻",
         terminate = "□",

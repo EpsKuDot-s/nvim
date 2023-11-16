@@ -233,33 +233,6 @@ function config.fterm()
   })
 end
 
-function config.satellite()
-  require('satellite').setup(
-    {
-      current_only = true,
-      winblend = 70,
-      zindex = 80,
-      excluded_filetypes = {},
-      width = 1,
-      handlers = {
-        search = {
-          enable = true,
-        },
-        diagnostic = {
-          enable = true,
-        },
-        gitsigns = {
-          enable = false,
-        },
-        marks = {
-          enable = true,
-          show_builtins = false, -- shows the builtin marks like [ ] < >
-        },
-      },
-    }
-  )
-end
-
 function config.spectre()
   require('spectre').setup({
     color_devicons     = true,

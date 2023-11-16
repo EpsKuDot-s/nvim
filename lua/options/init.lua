@@ -29,10 +29,15 @@ if vim.g.neovide then
   opt.winblend = 40
   opt.pumblend = 40
 
-  vim.opt.guifont = { "Iosevka SS09", "FiraCode NFM", "JuliaMono Medium", ":h11" }
-  vim.g.neovide_floating_blur_amount_x = 3.0
-  vim.g.neovide_floating_blur_amount_y = 3.0
+  vim.opt.guifont = { "CaskaydiaCove Nerd Font Mono","Iosevka SS09", "FiraCode NFM", "JuliaMono Medium", ":h10" }
+  vim.g.neovide_floating_blur_amount_x = 2.0
+  vim.g.neovide_floating_blur_amount_y = 2.0
+  vim.g.neovide_scroll_animation_length = 0.1
+  vim.g.neovide_cursor_animation_length = 0.07
+  vim.g.neovide_cursor_trail_size = 0.4
+  vim.g.neovide_cursor_vfx_mode = "pixiedust"
 end
+
 opt.laststatus = 3
 opt.mouse = 'nv'
 opt.hidden = true

@@ -3,9 +3,9 @@ require('keymap.remap')
 
 -- Terminal
 vim.keymap.set('n', '<Leader>to', ':lua require("FTerm").toggle()<CR>', { desc = " Terminal toggle" })
-vim.keymap.set('n', '<A-i>', '<CMD>lua require("FTerm").toggle()<CR>')
-vim.keymap.set('t', '<A-i>', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
-vim.keymap.set('t', '<A-I>', '<C-\\><C-n><CMD>lua require("FTerm").exit()<CR>')
+vim.keymap.set('n', '<C-t>', '<CMD>lua require("FTerm").toggle()<CR>')
+vim.keymap.set('t', '<C-t>', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
+vim.keymap.set('t', '<C-C>', '<C-\\><C-n><CMD>lua require("FTerm").exit()<CR>')
 vim.keymap.set('n', '<Leader>tr', ':lua require"runner".run()<CR>', { desc = "󱧕 Run runner.nvim" })
 
 -- Lazy
