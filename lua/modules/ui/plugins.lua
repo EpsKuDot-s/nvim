@@ -35,11 +35,6 @@ package({
   config = conf.indent_blankline,
 })
 
--- package({
---   'NvChad/nvim-colorizer.lua',
---   config = conf.colorizer,
---   init = true
--- })
 package({
   'brenoprata10/nvim-highlight-colors',
   config = conf.highlight_colors,

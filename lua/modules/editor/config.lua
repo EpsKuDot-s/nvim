@@ -88,6 +88,7 @@ function config.session_lens()
     previewer = false
   }
   require("telescope").load_extension("session-lens")
+  require("telescope").load_extension("toggletasks")
 end
 
 local function ts_disable(_, bufnr)

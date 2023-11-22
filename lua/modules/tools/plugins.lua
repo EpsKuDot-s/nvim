@@ -29,10 +29,6 @@ package({
   config = conf.cutlass,
   lazy = false
 })
--- package({
---   'glepnir/template.nvim',
---   config = conf.template_nvim
--- })
 package({
   'CRAG666/code_runner.nvim',
   config = conf.code_runner,
@@ -44,7 +40,16 @@ package({
   ft = { 'typescript', 'html' },
   dependencies = {
     'nvim-telescope/telescope.nvim',
-    dependencies = { 'nvim-lua/plenary.nvim' }
+    'nvim-lua/plenary.nvim'
+  }
+})
+package({
+  'jedrzejboczar/toggletasks.nvim',
+  config = conf.toggletasks,
+  dependencies = {
+    'nvim-telescope/telescope.nvim',
+    'akinsho/toggleterm.nvim',
+    'nvim-lua/plenary.nvim'
   }
 })
 package({

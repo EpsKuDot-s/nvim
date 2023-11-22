@@ -140,6 +140,10 @@ function config.runner()
   })
 end
 
+function config.toggletasks()
+  require('toggletasks').setup {}
+end
+
 function config.competitest()
   require('competitest').setup(
     {

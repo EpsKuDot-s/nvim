@@ -18,15 +18,18 @@ end
 
 function config.gitsigns()
   require('gitsigns').setup({
-    signs = {
-      add          = { hl = 'GitGutterAdd', text = '' }, -- 🮙
-      change       = { hl = 'GitGutterChange', text = '~' },
-      delete       = { hl = 'GitGutterDelete', text = '' },
-      topdelete    = { hl = 'GitGutterDeleteChange', text = '▔' },
-      changedelete = { hl = 'GitGutterChange', text = '~' },
-      untracked    = { text = '' }
-    }
-
+    signs      = {
+      add          = { text = '│' },
+      change       = { text = '│' },
+      delete       = { text = '_' },
+      topdelete    = { text = '‾' },
+      changedelete = { text = '~' },
+      untracked    = { text = '┆' },
+    },
+    signcolumn = true, -- Toggle with `:Gitsigns toggle_signs`
+    numhl      = true, -- Toggle with `:Gitsigns toggle_numhl`
+    linehl     = false, -- Toggle with `:Gitsigns toggle_linehl`
+    word_diff  = true,
   })
 end
 
@@ -35,50 +38,9 @@ function config.indent_blankline()
   vim.opt.listchars:append "eol:󱞣"
   vim.opt.listchars:append "space:⋅"
   vim.opt.list = true
-  require("ibl").setup()
-  -- require('indent_blankline').setup({
-  --   char = '',
-  --   char_blankline = '┆',
-  --   show_end_of_line = false,
-  --   use_treesitter_scope = true,
-  --   show_first_indent_level = false,
-  --   space_char_blankline = " ",
-  --   -- show_current_context = true,
-  --   -- show_current_context_start = true,
-  --   -- show_current_context_start_on_current_line = false,
-  --   filetype_exclude = {
-  --     'dashboard',
-  --     'DogicPrompt',
-  --     'log',
-  --     'fugitive',
-  --     'gitcommit',
-  --     'packer',
-  --     'markdown',
-  --     'json',
-  --     'txt',
-  --     'vista',
-  --     'help',
-  --     'todoist',
-  --     'NvimTree',
-  --     'git',
-  --     'TelescopePrompt',
-  --     'undotree',
-  --   },
-  --   buftype_exclude = { 'terminal', 'nofile', 'prompt' },
-  --   context_patterns = {
-  --     'class',
-  --     'function',
-  --     'method',
-  --     'block',
-  --     'list_literal',
-  --     'selector',
-  --     '^if',
-  --     '^table',
-  --     'if_statement',
-  --     'while',
-  --     'for',
-  --   },
-  -- })
+  require("ibl").setup({
+    scope = { enabled = false },
+  })
 end
 
 function config.alpha()
